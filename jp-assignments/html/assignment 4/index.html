@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .parent {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 4400px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .container {
+            height: 400px;
+            width: 4400px;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        .heaher {
+            background-color: darkgray;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .steps {
+            width: 33.3%;
+            padding: 10px;
+        }
+
+        .active {
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+
+        <section class="parent" id="start">
+            <div style="text-align: center;">
+                <h1>Fill Review Form</h1>
+                <hr style="margin: 20px 0px 20px 0px;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum omnis modi ipsum voluptas tempore
+                    eveniet ducimus vitae, autem suscipit cumque.</p>
+                <br>
+                <h2>This form containes following sections</h2>
+                <br>
+                <div>Account Details</div>
+                <div>Personal Details</div>
+                <div>Review Section</div>
+                <br>
+                <p>Click below to start</p>
+                <br><br>
+                <a href="#one"><img src="./images/index.png" alt=""></a>
+            </div>
+        </section>
+
+        <section class="parent" id="one">
+
+            <div class="heaher">
+                <div class="steps active">Step 1: Account</div>
+                <div class="steps">Step 2: Personal Data</div>
+                <div class="steps">Step 3: Your Review</div>
+            </div>
+
+
+            <fieldset class="container">
+                <legend>Account</legend>
+                <label for="x"> Email: <input type="email" id="x"> </label>
+                <br> <br>
+                <label for="y"> Password: <input type="password" id="y"> </label>
+                <br> <br>
+                <label for="i"> Confirm password: <input type="password" id="i"> </label>
+                <br> <br>
+                <a href="#start">
+                    <img src="./images/back.png" alt="" width="100px">
+                </a>
+                <a href="#two">
+                    <img src="./images/next.png" alt="" width="100px">
+                </a>
+            </fieldset>
+        </section>
+
+        <section class="parent" id="two">
+
+            <div class="heaher">
+                <div class="steps">Step 1: Account</div>
+                <div class="steps active">Step 2: Personal Data</div>
+                <div class="steps">Step 3: Your Review</div>
+            </div>
+
+
+            <fieldset class="container">
+                <legend>Account</legend>
+                <label for="a"> First Name: <input type="text" id="a"> </label>
+                <br> <br>
+                <label for="b"> Last Name: <input type="text" id="b"> </label>
+                <br> <br>
+                <label> CNIC: <input type="checkbox"> <input type="checkbox"> <input type="checkbox">
+                    <input type="checkbox"> <input type="checkbox"> • <input type="checkbox"> <input type="checkbox">
+                    <input type="checkbox"> <input type="checkbox"> <input type="checkbox">
+                    <input type="checkbox"> <input type="checkbox"> <input type="checkbox"> • <input type="checkbox">
+                </label>
+                <br>
+                <br><br>
+                <label for="c"> Social Links: <input type="url" id="c"> </label>
+                <br><br>
+                <a href="#three">
+                    <img src="./images/submit.png" alt="" width="100px">
+                </a>
+            </fieldset>
+        </section>
+
+        <section class="parent" id="three">
+            <div style="text-align: center;">
+                <h1>Thank You !</h1>
+                <br>
+                <h2>You have been successfully submitted</h2>
+                <br>
+                <h2>Go to home</h2>
+            </div>
+        </section>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,461 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topBar {
+    background: #000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+.bottomBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1780px;
+    margin: auto;
+    padding: 30px 10px;
+}
+
+.bottomBar div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.bottomBar div:first-child img {
+    width: 150px;
+}
+
+.bottomBar div ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    font-weight: 600;
+}
+
+.bottomBar div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.bottomBar i {
+    font-size: 28px;
+}
+
+.bottomBar i:nth-child(2) {
+    padding: 0px 20px;
+}
+
+.hero {
+    max-width: 1780px;
+    margin: auto;
+    padding: 30px 10px;
+    height: 810px;
+    margin-top: 60px;
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/home/0207/Desktop-Homepage-KV.jpg?imwidth=1366');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.hero div {
+    max-width: 800px;
+    padding-left: 100px;
+}
+
+.hero div h1 {
+    font-size: 68px;
+    line-height: 68px;
+    font-weight: 600;
+}
+
+.hero div p {
+    font-size: 22px;
+    padding: 30px 0px;
+}
+
+.hero div button {
+    background: #000;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 99px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+main {
+    max-width: 1780px;
+    margin: auto;
+    padding: 30px 10px;
+}
+
+.mainOne h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.mainOne ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 80px 0px 30px 0px;
+    gap: 40px;
+}
+
+.mainOne ul li:first-child {
+    border-bottom: 3px solid black;
+    padding-bottom: 5px;
+}
+
+.offers {
+    height: 850px;
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+.offers .left {
+    height: 100%;
+    width: 50%;
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/home/0207/Big-tile-desktop-684X684.jpg.png?$684_684_JPG$');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: start;
+}
+
+.leftContent {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+.offers .right {
+    height: 100%;
+    width: 50%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+
+.offers .right div {
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.offers .right div:nth-child(1) {
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/home/0207/330x330-zfold.jpg?$330_330_JPG$');
+}
+
+.offers .right div:nth-child(2) {
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/home/0207/330x330-flip.jpg?$330_330_JPG$');
+}
+
+.offers .right div:nth-child(3) {
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/home/0207/330x330-s22.jpg?$330_330_JPG$');
+}
+
+.offers .right div:nth-child(4) {
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/home/0207/new2-330x330-A04.jpg?$330_330_JPG$');
+}
+
+.offers .heading {
+    background: #037A86;
+    border-radius: 99px;
+    padding: 5px 10px;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    text-align: start;
+}
+
+.offers h4 {
+    font-size: 25px;
+}
+
+.leftContent h4 {
+    font-size: 35px;
+}
+
+.leftContent p {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.mainTwo {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.mainTwo h2 {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.mainTwo ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 30px 0px 30px 0px;
+    gap: 40px;
+}
+
+.mainTwo ul li:first-child {
+    border-bottom: 3px solid black;
+    padding-bottom: 5px;
+}
+
+.mainTwo .img {
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/Premier-Frame-banner-1440x810-No-text.jpg?$1440_810_JPG$');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1100px;
+    height: 600px;
+    margin: auto;
+}
+
+.mainTwo h3 {
+    margin: 50px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.mainTwo p {
+    font-size: 20px;
+}
+
+.mainTwo button {
+    margin-top: 30px;
+    background: #000;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 99px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mainThree {
+    display: flex;
+    gap: 80px;
+}
+
+.mainThree .img {
+    background-image: url('https://images.samsung.com/is/image/samsung/assets/pk/p6_gro2/p6_initial_explore_detail/brand/global0028_explore_g-nusmas/global0028_home-explore-banner_pc_684x684.jpg?$684_684_PNG$');
+    height: 900px;
+    width: 50%;
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainThreeHeading {
+    margin: 50px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+    margin: 100px 0px 80px 0px;
+}
+
+.mainThree .right {
+    margin-top: 120px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.mainThree .right hr {
+    border: 2px solid black;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-weight: 600;
+}
+
+.tab span {
+    font-size: 25px;
+}
+
+.tab h3 {
+    font-size: 35px;
+}
+
+.mainThree .right .link {
+    max-width: max-content;
+    font-weight: 600;
+    font-size: 18px;
+    border-bottom: 3px solid black;
+    margin-left: 80px;
+}
+
+.mainFour {
+    margin: 100px 0px;
+    text-align: center;
+}
+
+.mainFour h2 {
+    margin: 50px 0px 10px 0px;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.search {
+    max-width: max-content;
+    margin: 40px auto 20px auto;
+    border: 1px solid black;
+    border-radius: 99px;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 20px 15px 20px;
+}
+
+.search i {
+    font-size: 35px;
+}
+
+.search input {
+    background-color: inherit;
+    border: none;
+    width: 600px;
+    font-size: 30px;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.mainFour span {
+    display: inline-block;
+    border: rgba(128, 128, 128, 0.411) 1px solid;
+    border-radius: 99px;
+    padding: 10px 15px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.mainFour .tags {
+    max-width: 800px;
+    margin: auto;
+}
+
+.mainFive {
+    font-size: 18px;
+    color: gray;
+    margin: 80px 0px;
+}
+
+footer div {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+h5 {
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+footer ul {
+    margin-top: 40px;
+    list-style: none;
+    font-size: 24px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer div span {
+    border-left: 1px rgba(128, 128, 128, 0.486) solid;
+    padding-left: 30px;
+}
+
+footer div span:nth-child(1) {
+    border-left: none;
+    padding-left: 0px;
+}
+
+.copyRights {
+    padding: 60px 0px;
+    color: gray;
+}
+
+.footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: gray;
+    padding: 60px 0px;
+}
+
+.footerBottom span {
+    font-weight: 600;
+    border-right: gray 1px solid;
+    padding-right: 40px;
+    margin-right: 40px;
+}
+
+.footerBottom div {
+    display: flex;
+    align-items: center;
+}
+
+.footerBottom ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.footerBottom i {
+    color: #000;
+    font-size: 25px;
+    margin: 0px 10px;
+}

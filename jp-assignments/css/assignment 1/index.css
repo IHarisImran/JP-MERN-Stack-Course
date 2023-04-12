@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    padding: 50px 0px 50px 0px;
+}
+
+#head {
+    text-align: center;
+    color: grey;
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 65px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h1 span {
+    color: black;
+    font-weight: 600;
+}
+
+#head div {
+    color: green;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+hr {
+    margin: 40px 0px 40px 0px;
+}
+
+#body {
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    margin-top: 40px;
+}
+
+#body h2 {
+    background-color: black;
+    color: white;
+    max-width: fit-content;
+    padding: 2px 5px 2px 5px;
+    text-transform: uppercase;
+}
+
+#body section section {
+    padding-left: 30px;
+    margin: 15px 0px;
+    border: none;
+    border-left: dotted 3px;
+    border-color: gray;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.greened {
+    color: green;
+    font-weight: 600;
+}
+
+.greenedParent {
+    text-transform: uppercase;
+    padding: 5px 0px;
+}
+
+ul {
+    margin: 18px 0px 0px 18px;
+}
+
+
+
+ul li::before {
+    content: "\2022";
+    color: green;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+#activity {
+    margin: 18px 0px 0px 0px;
+}

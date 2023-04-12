@@ -1,0 +1,118 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header {
+    background: #FBECDD;
+}
+
+header div {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+    text-transform: uppercase;
+    color: gray;
+}
+
+header ul li:hover {
+    text-decoration: underline;
+    color: crimson;
+    cursor: pointer;
+}
+
+#hero {
+    height: 100vh;
+}
+
+#hero img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    background: rgba(128, 128, 128, 0.192);
+}
+
+main section {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    height: 300px;
+    background-image: url('https://www.pngmart.com/files/3/Ice-Cream-Cup-Transparent-Background.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+
+}
+
+main section div {
+    width: 50%;
+    color: gray;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+h2 {
+    color: crimson;
+    font-weight: 500;
+    padding: 20px 0px;
+    font-size: 30px;
+}
+
+p a {
+    color: grey;
+}
+
+footer {
+    background: rgb(198, 211, 23);
+}
+
+footer section {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    text-align: center;
+    height: 200px;
+}
+
+footer section div {
+    font-size: 30px;
+    text-transform: capitalize;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+i {
+    font-size: 40px;
+}

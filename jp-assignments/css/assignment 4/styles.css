@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial;
+}
+
+.topHeader {
+    background: rgba(161, 193, 211, 0.116);
+}
+
+.topHeader div {
+    max-width: 1350px;
+    margin: auto;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topHeader img {
+    width: 75px;
+    height: auto;
+}
+
+.topHeader select {
+    background: white;
+    border: solid 2px black;
+    width: 280px;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 4px;
+    color: gray;
+}
+
+.topHeader input[type=search] {
+    background: white;
+    border: solid 2px black;
+    width: 500px;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 4px;
+    color: gray;
+}
+
+.topHeader a {
+    font-weight: 600;
+    padding-bottom: 2px;
+    border-bottom: solid 3px black;
+}
+
+.topHeader button {
+    background: inherit;
+    border-radius: 99px;
+    padding: 8px 20px;
+    font-weight: 700;
+    margin-left: 20px;
+    border-top: crimson solid 5px;
+    border-bottom: skyblue solid 5px;
+    border-left: violet solid 5px;
+    border-right: orange solid 5px;
+}
+
+.bottomHeader {
+    box-shadow: 5px 5px 5px rgba(80, 80, 80, 0.062);
+}
+
+.bottomHeader div {
+    max-width: 1350px;
+    margin: auto;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 50px;
+}
+
+.bottomHeader span {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.bottomHeader ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    font-size: 15px;
+}
+
+
+.hero {
+    max-width: 1350px;
+    margin: auto;
+    padding: 16px;
+    padding-top: 20px;
+}
+
+.hero img {
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+main {
+    max-width: 1350px;
+    margin: auto;
+    padding: 16px;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px gray solid;
+    border-radius: 5px;
+    display: inline-block;
+    width: 315px;
+    margin: 0px 8px 12px 0px;
+}
+
+.imgContainer {
+    background: rgba(0, 0, 0, 0.822);
+    text-align: center;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.rs {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 15px 0px 30px 0px;
+}
+
+.loc {
+    font-size: 14px;
+}
+
+.cont {
+    border-left: 6px orange solid;
+    padding: 15px;
+}
