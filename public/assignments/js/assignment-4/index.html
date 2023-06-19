@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../styles/output.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(to bottom right, black, rgba(0, 0, 0, 0.829));
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.37) !important;
+            opacity: 1;
+        }
+
+        input[type="text"]:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.37) !important;
+        }
+
+        input[type="text"]::-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.37) !important;
+        }
+    </style>
+</head>
+
+<body class="h-screen flex flex-col gap-6 items-center justify-center">
+    <div class="p-7 w-72 backdrop-blur bg-slate-600/20 rounded-3xl shadow-2xl">
+        <div class="flex flex-col items-end justify-between select-none py10 h-48 pb-8">
+            <div class="w-full text-start">
+                <h1 class="text-slate-300 font-medium text-md">My Calculator</h1>
+            </div>
+            <div> <input type="text" id="prev2" readonly
+                    class="outline-none cursor-default text-white text-opacity-50 text-end w-full text-xl bg-transparent text-slate-500"
+                    placeholder="0"> <input type="text" id="prev1" readonly
+                    class="outline-none cursor-default text-white text-opacity-70 text-end w-full text-5xl bg-transparent font-medium"
+                    placeholder="0"> </div>
+        </div>
+        <div class="grid grid-cols-12 gap-4 text-white font-semibold text-2xl"> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(1)">1</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(2)">2</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(3)">3</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="clearValue()">C</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(4)">4</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(5)">5</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(6)">6</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="clearLastValue()">CE</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(7)">7</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(8)">8</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(9)">9</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="getValue('*')">x</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue(0)">0</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue('00')">00</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-slate-600/20 hover:bg-slate-600/30 active:bg-slate-600/50 rounded-xl"
+                onclick="getValue('.')">.</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="getValue('+')">+</button> <button
+                class="col-span-6 w-full h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="calculateValue()">=</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="getValue('-')">-</button> <button
+                class="col-span-3 w-12 h-12 shadow-xl transition-all backdrop-blur bg-blue-600 bg-opacity-50 hover:bg-opacity-70 active:bg-opacity-80 rounded-xl"
+                onclick="getValue('/')">/</button> </div>
+    </div>
+    <script> let prev1 = document.getElementById("prev1"), prev2 = document.getElementById("prev2"); function getValue(val) { prev1.value += val; }; function calculateValue() { prev2.value = prev1.value; prev1.value = eval(prev1.value); }; function clearValue() { prev2.value = ""; prev1.value = ""; }; function clearLastValue() { prev1.value = prev1.value.slice(0, prev1.value.length - 1); }; </script>
+</body>
+
+</html>
