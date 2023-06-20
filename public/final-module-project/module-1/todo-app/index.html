@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../../styles/output.css" rel="stylesheet">
+    <title>ToDo App - Final Module Project</title>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-4 bg-gray-100">
+    <section class="w-full max-w-md shadow-2xl shadow-violet-300">
+        <h1
+            class="bg-violet-600 text-white font-bold text-center flex items-center justify-center h-12 sm:h-14 md:h-16 text-lg sm:text-xl md:text-2xl rounded-t-lg tracking-wider">
+            MY TODO'S</h1>
+        <div id="todos" class="bg-white p-4 sm:p-5 rounded rounded-b-lg text-slate-600 flex flex-col gap-4">
+
+            <div class="text-center py-4 font-medium sm:text-lg">Fetching Data...</div>
+        </div>
+        <div class="bg-white flex justify-center">
+            <button onclick="add()"
+                class="bg-violet-600 hover:bg-violet-700 transition-all text-white rounded-full px-4 py-1 sm:px-8 sm:py-2 sm:text-xl font-semibold -mb-4">NEW
+                TASK</button>
+        </div>
+    </section>
+
+    <script type="module">
+        import { database, set, push, ref, getValue, remove } from "../../../firebase-sdk.js";
+
+        const todos = document.getElementById("todos");
+
+        async function getData() {
+            const todos = await getValue("todos/");
+            render(todos);
+        };
+        getData();
+
+        function render(data) {
+            todos.innerHTML = "";
+            data.map((i, j) => {
+                todos.innerHTML += `
+                    <div class="flex items-center justify-between gap-3 sm:gap-4">
+                        <label for="t${j}" onclick="check('${[i.id, '|', i.isChecked]}')" class="flex items-center gap-3 sm:gap-4 truncate cursor-pointer">
+                            <input type="checkbox" ${i.isChecked ? 'checked' : ''} id="t${j}"
+                                class="accent-violet-600 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 cursor-pointer">
+                            <h2 class="font-medium text-sm sm:text-base truncate ${i.isChecked ? 'line-through text-slate-400' : ''}">${i.title}</h2>
+                        </label>
+                        <div class="${i.isChecked ? 'invisible' : ''} flex-shrink-0 flex items-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-lg">
+                            <i class="bi-trash hover:text-violet-600 cursor-pointer" onclick="remove('${i.id}')"></i>
+                            <i class="bi-pencil hover:text-violet-600 cursor-pointer" onclick="edit('${i.id}')"></i>
+                        </div>
+                    </div>
+                `;
+            });
+        };
+
+
+        window.add = () => {
+            const title = prompt("Enter ToDo's Title."),
+                userRef = push(ref(database, "todos/")),
+                obj = { title: title, isChecked: false, id: userRef.key };
+
+            set(userRef, obj);
+            getData();
+        };
+        window.check = (param) => { getData(); };
+        window.edit = (param) => { getData(); };
+        window.remove = (param) => {
+            remove(ref(database, `todos/${param}`));
+            getData();
+        };
+    </script>
+</body>
+
+</html>

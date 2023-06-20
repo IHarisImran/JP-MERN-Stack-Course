@@ -20,7 +20,8 @@
 
     <main class="max-w-sm md:max-w-md lg:max-w-lg mx-auto w-full">
         <h1 id="question"
-            class="text-center text-slate-700 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl"></h1>
+            class="text-center text-slate-700 font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+            Loading...</h1>
 
         <div id="options" class="mt-10 sm:mt-12 md:mt-14 lg:mt-16 flex flex-col gap-3 sm:gap-4 md:gap-5"></div>
 
@@ -33,89 +34,55 @@
     </footer>
 
     <script type="module">
-        const quiz = [
-            {
-                question: "Who are we?",
-                answer: "Programmers",
-                options: [
-                    "Doctors",
-                    "Programmers",
-                    "Plumbers",
-                    "None of these."
-                ]
-            },
-            {
-                question: "What do we want?",
-                answer: "Code that compiles on the first try.",
-                options: [
-                    "12 Hours Sleep.",
-                    "5 Star Hotel for the vacations.",
-                    "Make the world a better place.",
-                    "Code that compiles on the first try."
-                ]
-            },
-            {
-                question: "How do we handle errors?",
-                answer: "We blame the compiler, IDE, and the keyboard.",
-                options: [
-                    "We dont. We call them features.",
-                    "When we are dreaming.",
-                    "We blame the compiler, IDE, and the keyboard.",
-                    "None of these."
-                ]
-            },
-            {
-                question: "Whats our superpower?",
-                answer: "We can turn caffeine and pizza into code.",
-                options: [
-                    "We dont sleep.",
-                    "We can turn caffeine and pizza into code.",
-                    "We barely see sun shines.",
-                    "None of these."
-                ]
-            }
-        ], answers = [];
+        import { getValue } from "../../../firebase-sdk.js";
 
         const questionCount = document.getElementById("questionCount"),
             question = document.getElementById("question"),
             options = document.getElementById("options");
-        let currentQuestion = document.getElementById("currentQuestion");
-        let index = 0;
+        let currentQuestion = document.getElementById("currentQuestion"),
+            index = 0,
+            answers = [];
+            
+        async function getData() {
+            const quiz = await getValue("quiz/");
 
-        questionCount.innerText = quiz.length;
-        currentQuestion.innerText = 1;
+            questionCount.innerText = quiz.length;
+            currentQuestion.innerText = 1;
 
-        function render() {
-            question.innerText = quiz[index].question;
+            function render() {
+                question.innerText = quiz[index].question;
 
-            options.innerHTML = "";
-            quiz[index].options.map((i, j) => {
-                options.innerHTML += `
+                options.innerHTML = "";
+                quiz[index].options.map((i, j) => {
+                    options.innerHTML += `
                     <label for="a${j}" onclick="checkAnswer('${i}')" class="bg-white shadow-2xl rounded p-4 flex items-center gap-3 sm:gap-4 cursor-pointer">
                         <input id="a${j}" name="options" type="radio" class="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer flex-shrink-0">
                         <h2 class="line-clamp-1 font-semibold md:text-lg lg:text-xl">${i}</h2>
                     </label>
             `});
-        };
-        render();
+            };
+            render();
 
-        window.checkAnswer = (param) => {
-            if (param == quiz[index].answer) { answers.push(true) }
-            else { answers.push(false); };
+            window.checkAnswer = (param) => {
+                if (param == quiz[index].answer) { answers.push(true) }
+                else { answers.push(false); };
 
-            if ((index + 1) < 4) {
-                currentQuestion.innerText = index + 2;
-                index += 1;
-                render();
-            } else {
-                new ConfettiGenerator({ target: 'confetti' }).render();
+                if ((index + 1) < 4) {
+                    currentQuestion.innerText = index + 2;
+                    index += 1;
+                    render();
+                } else {
+                    new ConfettiGenerator({ target: 'confetti' }).render();
 
-                const correctedCount = answers.filter(i => i === true).length;
+                    const correctedCount = answers.filter(i => i === true).length;
 
-                question.innerText = `Your score ${correctedCount}/${quiz.length}`;
-                options.innerHTML = '';
+                    question.innerText = `Your score ${correctedCount}/${quiz.length}`;
+                    options.innerHTML = '';
+                };
             };
         };
+
+        getData();
     </script>
 </body>
 
