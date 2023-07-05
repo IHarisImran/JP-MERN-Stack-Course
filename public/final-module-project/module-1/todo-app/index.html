@@ -25,7 +25,7 @@
     </section>
 
     <script type="module">
-        import { database, set, push, ref, getValue, remove } from "../../../firebase-sdk.js";
+        import { database, set, push, ref, getValue, remove, get } from "../../../firebase-sdk.js";
 
         const todos = document.getElementById("todos");
 
@@ -58,16 +58,35 @@
         window.add = () => {
             const title = prompt("Enter ToDo's Title."),
                 userRef = push(ref(database, "todos/")),
-                obj = { title: title, isChecked: false, id: userRef.key };
+                obj = { title, isChecked: false, id: userRef.key };
 
             set(userRef, obj);
             getData();
         };
-        window.check = (param) => {
-            //  getData(); 
+        window.check = async (param) => {
+            const todoRef = ref(database, `todos/${param}/isChecked`),
+                todoSnapshot = await get(todoRef);
+
+            if (todoSnapshot.exists()) {
+                const isChecked = todoSnapshot.val();
+                await set(todoRef, !isChecked);
+                getData();
+            };
         };
-        window.edit = (param) => {
-            //  getData();
+        window.edit = async (param) => {
+            const todoRef = ref(database, `todos/${param}`),
+                todoSnapshot = await get(todoRef);
+
+            if (todoSnapshot.exists()) {
+                const todoTitle = todoSnapshot.val().title;
+                const newTitle = prompt("Enter a new title", todoTitle);
+
+                if (newTitle !== null) {
+                    const updatedTodo = { ...todoSnapshot.val(), title: newTitle };
+                    await set(todoRef, updatedTodo);
+                    getData();
+                };
+            };
         };
         window.remove = (param) => {
             remove(ref(database, `todos/${param}`));

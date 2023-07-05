@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch"
+    "dev": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.2"

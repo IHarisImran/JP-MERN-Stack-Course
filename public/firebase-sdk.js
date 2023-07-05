@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getDatabase, set, push, ref, onValue, remove } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+import { getDatabase, set, push, ref, onValue, remove, get } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 initializeApp({
     apiKey: "AIzaSyAu8GXqdif0BoSX-yVgRp7LgWtPYGpQrHA",
@@ -20,4 +20,4 @@ async function getValue(param) {
     })
 };
 
-export { database, set, push, ref, getValue, remove };
+export { database, set, push, ref, getValue, remove, get };
